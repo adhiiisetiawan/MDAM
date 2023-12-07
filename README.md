@@ -14,7 +14,7 @@ python generate_data.py --filename=data/tsp_20 --problem="tsp" --graph_sizes=20 
 
 To evaluate the test dataset with pretrained model for TSP20
 ```bash
-CUDA_VISIBLE_DEVICES="0" python -u search.py data/tsp_20.pkl --model=pretrained/tsp_20/epoch-99.pt --beam_size=1 --eval_batch_size=1024
+CUDA_VISIBLE_DEVICES="0" python -u search.py data/tsp_20.pkl --model=pretrained_tsp20/tsp_20/epoch-99.pt --beam_size=1 --eval_batch_size=1024
 ```
 
 To Download all the pretrained models, generate the test datasets, evaluate with greedy strategy, 30-width and 50-width beam searching
