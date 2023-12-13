@@ -202,5 +202,5 @@ pyrightconfig.json
 # Ignore all local history of files
 .history
 .ionide
-
+.env-mdam
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,jupyternotebooks
