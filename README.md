@@ -30,11 +30,13 @@ bash eval.sh spctsp
 ```
 
 Dependencies
-* Python==3.6
+* Python==3.10
 * NumPy
-* PyTorch>=1.4.0
+* PyTorch==2.1.1 (Support with CUDA 12.3)
 * tqdm
 * tensorboard_logger
+
+**Note:** The dependencies above has tested on CUDA 12.3 with fix error in some class `RuntimeError: __class__ not set defining 'StatePCTSP' as <class 'problems.pctsp.state_pctsp.StatePCTSP'>. Was __classcell__ propagated to type.__new__`
 
 MDAM is developed based on https://github.com/wouterkool/attention-learn-to-route (Kool, W.; van Hoof, H.; and Welling, M. 2019. Attention,
 Learn to Solve Routing Problems! In Proceedings of International Conference on Learning Representations (ICLR).)
