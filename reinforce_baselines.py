@@ -5,6 +5,9 @@ from scipy.stats import ttest_rel
 import copy
 from train import rollout, get_inner_model
 
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
+
 class Baseline(object):
 
     def wrap_dataset(self, dataset):
@@ -96,7 +99,8 @@ class ExponentialBaseline(Baseline):
         if self.v is None:
             v = c.mean()
         else:
-            v = self.beta * self.v.to("cuda:" + str(c.get_device())) + (1. - self.beta) * c.mean()
+            # print(f"device result {device}")
+            v = self.beta * self.v.to(device) + (1. - self.beta) * c.mean()
 
         self.v = v.detach()  # Detach since we never want to backprop
         return self.v, 0  # No loss
